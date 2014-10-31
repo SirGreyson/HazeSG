@@ -1,0 +1,47 @@
+### SurvivalGames Kit Configuration ###
+### NOTICE: Do NOT remove the DEFAULT Kit ###
+
+## The ID of the Kit ##
+## Default Kit [DO NOT REMOVE] ##
+DEFAULT:
+  # Permission node required to select this Kit #
+  # Set to 'NONE' if no permission node is needed #
+  permission: NONE
+  # Colored display name of this Kit #
+  displayName: '&6Default Kit'
+  # Material to use as an icon for this Kit in the KIT_MENU #
+  iconMaterial: WOOD
+  # List of items to give with this Kit at each upgrade level #
+  kitItems:
+    # Default list of items to give with this Kit #
+    # Format: 'MATERIAL[:DATA] [AMOUNT] [DISPLAYNAME] [ENCHANT/LEVEL,ENCHANT/LEVEL...]' #
+    # Set DISPLAYNAME to 'NONE' to avoid setting a custom item name #
+    # Materials: http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html #
+    # Enchantments: http://jd.bukkit.org/rb/apidocs/org/bukkit/enchantments/Enchantment.html #
+    0:
+    - APPLE 3
+    - LEATHER_HELMET:11 1 &cDefault_Helmet
+    - LEATHER_CHESTPLATE:11 1
+    - WOOD_SWORD 1 NONE KNOCKBACK/1,DAMAGE_ALL/1
+    # List of items to give with this Kit at upgrade level 1 #
+    # To configure rewards for more levels just add the level number and a list of items #
+    1: 
+    - APPLE 5
+    - GOLD_HELMET 1 &6Default_Helmet
+    - GOLD_CHESTPLATE 1
+    - STONE_SWORD 1 NONE KNOCKBACK/2
+  # List of PotionEffects to give with this Kit at each upgrade level #
+  kitEffects:
+    # Default list of PotionEffects to give with this Kit #
+    # Format: 'TYPE:DURATION[:AMPLIFIER]' #
+    # Set DURATION to '-1' for an unlimited effect duration #
+    # PotionEffectTypes: http://jd.bukkit.org/rb/apidocs/org/bukkit/potion/PotionEffectType.html #
+    0:
+    - NIGHT_VISION:-1
+    - INCREASE_DAMAGE:60:1
+    # List of effects to give with this Kit at upgrade level 1 #
+    # To configure rewards for more levels just add the level number and a list of effects #
+    1:
+    - NIGHT_VISION:-1
+    - INCREASE_DAMAGE:180:2	
+  

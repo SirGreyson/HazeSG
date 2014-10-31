@@ -1,0 +1,91 @@
+### SurvivalGames Plugin Configuration ###
+
+## BungeeCord name of the HazeSG Lobby Server ##
+LOBBY_SERVER: sgLobby
+## Spawn World for joining Players. Spawn point will be this World's spawn ##
+SPAWN_WORLD: world
+
+## Number of Players needed online to start a Game ##
+STARTING_PLAYERS: 10
+## Number of Players needed alive to start a DeathMatch ##
+DEATHMATCH_PLAYERS: 3
+
+## Number of Tokens a Player should receive for killing another Player ##
+KILL_TOKENS: 1
+## Number of Tokens a Player should receive for winning ## 
+WIN_TOKENS: 10
+
+## List of Materials that CAN be broken by Players ##
+## http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html ##
+ITEM_BREAK_WHITELIST:
+- LEAVES
+- GLASS
+## List of Materials that CAN be placed by Players ##
+## http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html ##
+ITEM_PLACE_WHITELIST:
+- LEAVES
+- SPONGE
+
+## List of Items and their percentages for randomized loot in chests ##
+## Format: 'MATERIAL[:DATA] [AMOUNT] [DISPLAYNAME] [ENCHANT/LEVEL,ENCHANT/LEVEL...]=PERCENT' ## 
+## Item percentage is out of 100. Specifying no percentage is equivalent to a 100% chance ##
+## Use 'NONE' for DISPLAYNAME to avoid setting a custom item name ##
+## Material values can be found here: http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html ##
+## Enchantment values can be found here: http://jd.bukkit.org/rb/apidocs/org/bukkit/enchantments/Enchantment.html ##
+CHEST_LOADOUT:
+# 1 Diamond Sword with a 50% chance
+- DIAMOND_SWORD=50
+# 1 Stone Sword with a 75% chance
+- STONE_SWORD 1=75
+# 5 Blue Wool with a 25% chance
+- WOOL:11 5=95
+# 1 Gold Block named '&6Lucky Block' with a 10% chance
+- GOLD_BLOCK 1 &6Lucky_Block=10
+# 1 Bow named '&cDeadShot' with 2 Enchantments and a 30% chance
+- BOW 1 &cDeadShot ARROW_INFINITE/1,ARROW_KNOCKBACK/2=30
+
+## List of commands to run at the end of the RESTARTING phase ##
+RESTART_COMMANDS:
+- 'restart'
+
+## Configuration for GameTimer countdown intervals ##
+## All of the below time values are in the form of seconds ##
+countdown:
+
+  ## Time before the PREGAME begins after STARTING or FORCE_STARTING ##
+  START_PREGAME: 60 
+  
+  ## Time before Players can move and the INGAME phase begins ##
+  START_GAME: 30
+  
+  ## Time before Players get their Kit after the Game begins ##
+  EQUIP_KITS: 60
+  ## Time before opened Chests get restocked after the Game begins ##
+  RESET_CHESTS: 600
+  ## Time before the Game automatically starts a DeathMatch ##
+  END_GAME: 1200
+  
+  ## Time before Players can PvP after a DeathMatch begins ##
+  ENABLE_PVP: 60
+  ## Time before a DeathMatch ends due to a lack of a winner ##
+  END_DEATHMATCH: 300
+  
+  ## Time before the RESET phase begins after a Game finishes ##
+  RESET_SERVER: 30
+  
+## Configuration for Inventory Menu variables ##  
+menus:
+
+  # Options for Kit selection Menu #
+  KIT_MENU:
+    # Title displayed at the top of the Menu Inventory #
+    TITLE: '&bKit Selection Menu'
+    # Size of the Menu Inventory [Must be a multiple of 9] #
+    SIZE: 9
+  # Options for Spectator Menu #
+  SPECTATOR_MENU:
+    # Title displayed at the top of the Menu Inventory #
+    TITLE: '&aSpectator Menu'
+    # Size of the Menu Inventory [Must be a multiple of 9] #
+    SIZE: 18
+  

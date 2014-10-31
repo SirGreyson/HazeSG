@@ -1,0 +1,130 @@
+### SurvivalGames Message Configuration ###
+
+## Configuration for private (Player) messages sent by the plugin ##
+messages: 
+
+  # Prefix for all private messages #
+  PREFIX: '&7[&cHazeSG&7]&r'
+  
+  # Sent when a Player tries to join the server while a Game is in progress #
+  CANNOT_JOIN: '&cGame in progress! Try again later...'
+  
+  # Sent when a Player tries to select a Kit they do not have permission for #
+  KIT_NO_PERM: '&cSorry, you do not have permission to select this Kit!'
+  # Sent when a Player selects a Kit #
+  # Use %s for the Kit's display name #
+  KIT_SELECTED: '&aKit %s &ahas been selected!'
+  # Sent when a Player is given their selected Kit #
+  KIT_EQUIPPED: '&aKit %s &ahas been equipped!'
+  
+  # Sent when a Player gains Tokens #
+  # Use %d for the amount of Tokens gained #
+  TOKENS_GAINED: '&eYou receieved &6%d Tokens' 
+  
+  ## Sent when a Player dies and becomes a Specator ##
+  SPECTATOR_MODE: '&aYou are now in Spectator mode!'
+  
+## Configuration for public (Server) messages sent by the plugin ##
+broadcasts: 
+
+  # Prefix for all public messages #
+  PREFIX: '&7[&4HazeSG&7]&r'
+  
+  # Sent when a Player joins the server #
+  # Use %s for the name of the joining Player #
+  JOIN_MESSAGE: '&b%s &7joined the game'
+  # Sent when a Player quits the server #
+  # Use %s for the name of the qutting Player #
+  QUIT_MESSAGE: '&b%s &7quit the game'
+  
+  # Sent when a Player dies in game #
+  # Use %s for the name of the Player that was killed #
+  DEATH_MESSAGE: '&e%s &cdied'
+  # Sent when a Player is killed by another Player #
+  # Use %1$s for the name of the Player that was killed #
+  # Use %2$s for the name of the killing Player #
+  PVP_DEATH_MESSAGE: '&e%1$s &cwas killed by &e%2$s'
+  # Sent after the DEATH_MESSAGE to show how many Players are left #
+  # Use %d for the number of remaining Players #
+  REMAINING_PLAYERS: '&eThere are &b%d &ePlayers remaining!'
+  
+  # Sent when the lobby is counting down to start #
+  # Use %d for the amount of time left before starting #
+  STARTING: '&eTeleporting to Arena in &c%d &eseconds...'
+  # Sent when the starting countdown is cancelled due to a lack of players #
+  START_CANCELLED: '&cSorry! There are no longer enough players to start the game!'
+  
+  # Sent when all players are teleported into the Arena #
+  PREGAME_STARTED: '&eWelcome to the Arena! The game will begin in &c%d &eseconds!'
+  # Sent when the Game is counting down to start #
+  # Use %d for the amount of time left before starting #
+  GAME_STARTING: '&eThe Game will begin in &c%d &eseconds... Be sure to choose your Kit!'
+  
+  # Sent when the Game begins and all Players are unfrozen #
+  GAME_STARTED: '&eGame starting! Good luck, and may the odds be ever in your favor!'
+  # Sent when opened Arena chests are restocked automatically #
+  CHESTS_RESTOCKED: '&aNOTICE: &eAll reward chests have been restocked!'
+  # Sent when the Game is counting down to an automatic DeathMatch #
+  # Use %d for the amount of time left before starting #
+  DEATHMATCH_STARTING: '&cDeathMatch will begin in &4%d &cseconds...'
+  
+  # Sent when a DeathMatch starts #
+  # Use %d for the amount of time left before PvP is enabled #
+  DEATHMATCH_STARTED: '&cDeathMatch starting! Invincibility expires in &4%d &cseconds...'
+  # Sent when Players in a DeathMatch lose their invincibility and can PvP #
+  PVP_ENABLED: '&cDeathMatch PvP is now enabled! Last one standing wins!'
+  # Sent when a DeathMatch is nearing the end of its time limit #
+  # Use %d for the amount of time left before ending #
+  DEATHMATCH_ENDING: '&eDeathMatch ending in &c%d &eseconds...'
+  
+  # Sent when a Game finishes #
+  # Use %s for the name of the winning Player #
+  GAME_FINISHED: '&eGame Over! Congratulations to &c%s &efor winning!'
+  # Sent when the server is counting down to reset #
+  # Use %d for the amount of time left before the server restarts #
+  SERVER_RESTARTING: '&eThe server will restart in &c%d &eseconds...'
+  
+## Configuration for server-list (MOTD) messages set by the plugin ##
+motd:
+
+  # Server MOTD during the WAITING (Lobby) phase ## 
+  WAITING: '&aOPEN'
+  # Server MOTD during the STARTING (Pre-Game) phase ## 
+  STARTING: '&6Starting Soon!'
+  # Server MOTD during the RUNNING (In-Game) phase ## 
+  INGAME: '&cGame in Session'
+  # Server MOTD during the DEATH_MATCH phase ## 
+  DEATH_MATCH: '&cDeath-Match in Session'
+  # Server MOTD during the FINISHING (End-Game) phase ## 
+  FINISHING: '&cFinishing Game'
+  # Server MOTD during the RESETTING (Post-Game) phase ## 
+  RESETTING: '&aResetting!'
+  
+## Configuration for Scoreboard formatting during a Game ##
+scoreboard:
+
+  # Displayed title at the top of a Player's Scoreboard #
+  TITLE: '&6>>  &cHazeSG  &6<<'
+  
+  # Formatting for score values on a Player's Scoreboard #
+  # You can use the any following formatting variables: #
+  # %arena% = The display name of the active Arena #
+  # %kills% = The number of Players a Player has killed #
+  # %players% = The number of Players left alive in a Game #
+  # %time% = Formatted time left in the current Game phase #
+  FORMAT:
+  - ''
+  - '&eTime Left:'
+  - '&6%time%'
+  - ' '
+  - '&aCurrent Map:'
+  - '%arena%'
+  - '  '
+  - '&4Kills:'
+  - '&c%kills%'
+  - '    '
+  - '&3Players Left:'
+  - '&b%players%'
+  
+  
+  

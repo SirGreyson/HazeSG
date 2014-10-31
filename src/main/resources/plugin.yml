@@ -1,0 +1,20 @@
+name: HazeSG
+version: 1.0.0
+description: SurvivalGames plugin for HazeNetwork
+author: SirReason
+
+main: net.hazeservers.sg.SurvivalGames
+depend: [HazeTokens]
+softdepend: [Vault]
+
+commands:
+  arena:
+    description: Arena management command
+    permission: hazesg.admin
+    usage: '&cInvalid arguments! Use &6/arena help &cfor a list of arguments'
+  hazesg:
+    description: HazeSG plugin command
+    aliases: [sg, survivalgames]
+    usage: '&cInvalid arguments! Use &6/sg help &cfor a list of arguments'
+  kits:
+    description: Kit menu command

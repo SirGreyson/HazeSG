@@ -1,0 +1,13 @@
+### SurvivalGames Arena Configuration ###
+### Comments in this file will be removed after a restart ###
+
+## ID of the Arena ##
+testArena:
+  # Colored display name of the Arena #
+  displayName: testArena
+  # Name of the Arena's World #
+  worldName: arenaWorld
+  # Location for the DeathMatch #
+  deathMatchSpawn: 306.0,4.0,-112.0
+  # List of spawn-points for the Arena #
+  spawnLocations: []
