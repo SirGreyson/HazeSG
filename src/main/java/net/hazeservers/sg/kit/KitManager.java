@@ -73,7 +73,7 @@ public class KitManager {
     }
 
     public Kit getSelectedKit(Player player) {
-        if (!selectedKits.containsKey(player.getUniqueId())) return loadedKits.get("DEFAULT");
+        if (!selectedKits.containsKey(player.getUniqueId())) return loadedKits.get("DFLT");
         return loadedKits.get(selectedKits.get(player.getUniqueId()));
     }
 

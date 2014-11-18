@@ -88,4 +88,14 @@ menus:
     TITLE: '&aSpectator Menu'
     # Size of the Menu Inventory [Must be a multiple of 9] #
     SIZE: 18
+    
+## Configuration for MySQL Database connection ##
+mysql:
+  
+  HOST: 127.0.0.1
+  USERNAME: root
+  PASSWORD: password
+  DATABASE: hazesg
+  PORT: 3306
+
   

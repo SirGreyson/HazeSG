@@ -22,8 +22,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -104,7 +102,6 @@ public class Game {
         players.add(player.getUniqueId());
         plugin.getScoreboardManager().assignGameBoard(player);
         player.getInventory().addItem(plugin.getKitManager().getKitSelector());
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, Settings.Countdown.START_GAME.toInt() * 20, 10, true));
     }
 
     public void removePlayer(Player player) {

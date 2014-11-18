@@ -152,4 +152,12 @@ public class PlayerListener implements Listener {
         e.setQuitMessage(null);
         Messaging.broadcast(Lang.Broadcasts.QUIT_MESSAGE, e.getPlayer().getName());
     }
+
+    @EventHandler
+    public void onPlayerMove(PlayerMoveEvent e) {
+        if (game.getState() != GameState.PREGAME || !game.isPlayer(e.getPlayer())) {
+            return;
+        }
+        e.setCancelled(true);
+    }
 }

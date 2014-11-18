@@ -6,6 +6,7 @@
 
 package net.hazeservers.sg.kit;
 
+import net.hazeservers.sg.SurvivalGames;
 import net.hazeservers.sg.util.StringUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -22,6 +23,7 @@ import java.util.Map;
 
 public class Kit {
 
+    private SurvivalGames plugin;
     private String kitID;
     private String permission;
     private String displayName;
@@ -56,7 +58,7 @@ public class Kit {
         meta.setDisplayName(StringUtil.color(displayName));
         meta.setLore(Arrays.asList(
                 hasPermission(player) ? ChatColor.AQUA + "Click to equip this Kit!" : ChatColor.RED + "You do not have permission for this Kit!",
-                ChatColor.GOLD + "Upgrade Level:" + ChatColor.YELLOW + "0" //TODO Player-dependent level
+                ChatColor.GOLD + "Upgrade Level:" + ChatColor.YELLOW + plugin.getDataManager().getKitLevel(player, this)
         ));
         output.setItemMeta(meta);
         return output;
@@ -64,8 +66,9 @@ public class Kit {
 
     public void equipPlayer(Player player) {
         player.getInventory().clear();
-        for (ItemStack i : kitItems.get(0)) player.getInventory().addItem(i);
-        for (PotionEffect p : kitEffects.get(0)) player.addPotionEffect(p); //TODO Factor Player upgrade-level
+        int level = plugin.getDataManager().getKitLevel(player, this);
+        for (ItemStack i : kitItems.get(level)) player.getInventory().addItem(i);
+        for (PotionEffect p : kitEffects.get(level)) player.addPotionEffect(p);
     }
 
     public static Kit deserialize(final ConfigurationSection c) {

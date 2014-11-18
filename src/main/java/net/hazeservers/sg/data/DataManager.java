@@ -9,6 +9,7 @@ package net.hazeservers.sg.data;
 import net.hazeservers.sg.Messaging;
 import net.hazeservers.sg.SurvivalGames;
 import net.hazeservers.sg.config.Settings;
+import net.hazeservers.sg.kit.Kit;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -96,6 +97,18 @@ public class DataManager {
             Messaging.printErr("Error! Could not get PlayerData!", e.getMessage());
         }
         return null;
+    }
+
+    public int getKitLevel(Player player, Kit kit) {
+        try {
+            ResultSet res = querySQL("SELECT * FROM player_kits WHERE player_id = '" + player.getUniqueId().toString() + "';");
+            if (res.next()) {
+                return res.getInt(kit.getKitID());
+            }
+        } catch (SQLException e) {
+            Messaging.printErr("Error! Could not get upgrade level!", e.getMessage());
+        }
+        return 0;
     }
 
     //MySQL Database Management

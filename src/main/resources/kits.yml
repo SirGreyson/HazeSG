@@ -3,7 +3,7 @@
 
 ## The ID of the Kit ##
 ## Default Kit [DO NOT REMOVE] ##
-DEFAULT:
+DFLT:
   # Permission node required to select this Kit #
   # Set to 'NONE' if no permission node is needed #
   permission: NONE
